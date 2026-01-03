@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Play } from "lucide-react";
+import { Mail, Phone, MapPin, Play, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const roles = ["Trader", "Engineer", "Body Builder", "Blogger", "Foodie"];
@@ -93,9 +93,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed font-light"
         >
-          Graduate Analyst at Barclays | EM Macro Trading
-          <br className="hidden md:block" />
-          Imperial College London MEng
+          EM Macro Trader at Barclays | Imperial College London
         </motion.p>
         
         <motion.div
@@ -124,6 +122,15 @@ const Hero = () => {
           >
             <Phone size={16} className="text-sage" />
             <span className="font-body font-light">+44 07397 288999</span>
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/isaac-chu-b10242196/" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-sage transition-colors duration-300"
+          >
+            <Linkedin size={16} className="text-sage" />
+            <span className="font-body font-light">LinkedIn</span>
           </a>
           <div className="flex items-center gap-2">
             <MapPin size={16} className="text-sage" />

@@ -36,7 +36,7 @@ const experiences: ExperienceItem[] = [
     location: "UK",
     period: "Jul – Aug 2023",
     highlights: [
-      "40USD billion macro hedge fund",
+      "US$40 billion macro hedge fund",
       "Designed trade validation toolkit via factor models with ML and sentiment analysis",
       "Enhanced portfolio Sharpe Ratio from 1.09 to 3.10 through model improvements",
       "Proposed DV01 neutral STIR and forex trades via quantitative and relative value methods",
