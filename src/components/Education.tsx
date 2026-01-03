@@ -16,10 +16,8 @@ const education: EducationItem[] = [
     period: "Oct 2020 – Jun 2024",
     location: "UK",
     details: [
-      "Second-Upper Class Honours",
-      "Vice President Global Markets & Head of Corporate Relations - Imperial College Finance Society",
-      "Partnered with Morgan Stanley in portfolio management competition, scored 98th percentile",
-      "Citi Greater Bay Area Talent Program participant",
+      "Thesis on Research and Application of photosynthetic soft robotics",
+      "Design and manufacture of fully automated pizza-making robot",
     ],
   },
   {
@@ -38,8 +36,7 @@ const education: EducationItem[] = [
     period: "Sep 2016 – Jul 2020",
     location: "UK",
     details: [
-      "A* in Mathematics and Physics",
-      "A in Chemistry and Further Mathematics",
+      "Mathematics, Further Mathematics, Physics and Chemistry",
     ],
   },
 ];

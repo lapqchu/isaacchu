@@ -4,15 +4,15 @@ import bgIgloos from "@/assets/bg-igloos.jpg";
 
 const Footer = () => {
   return (
-    <footer className="relative min-h-[70vh] overflow-hidden flex items-center">
+    <footer className="relative min-h-[85vh] overflow-hidden flex items-end pb-16">
       {/* Background image - very slightly dimmed */}
       <div className="absolute inset-0">
         <img 
           src={bgIgloos}
           alt="Winter landscape background"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-earth/30" />
+        <div className="absolute inset-0 bg-earth/15" />
       </div>
       
       <div className="relative z-10 w-full section-padding">
@@ -25,12 +25,9 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h2 className="font-display text-3xl md:text-5xl text-foreground mb-6 drop-shadow-lg">
+            <h2 className="font-display text-3xl md:text-5xl text-foreground mb-10 drop-shadow-lg">
               Let's Connect
             </h2>
-            <p className="font-body text-foreground/90 mb-10 max-w-md mx-auto font-light drop-shadow-md">
-              Open to discussing opportunities in trading, quantitative finance, and investment banking.
-            </p>
             
             <div className="flex flex-wrap justify-center gap-6 mb-16">
               <a 
