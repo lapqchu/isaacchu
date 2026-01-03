@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
   { label: "Skills", href: "#skills" },
@@ -33,8 +34,8 @@ const Navigation = () => {
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" className="font-display text-xl font-semibold text-foreground">
-            Isaac<span className="text-gold">.</span>
+          <a href="#" className="font-display text-xl text-foreground">
+            Isaac<span className="text-sage">.</span>
           </a>
           
           {/* Desktop nav */}
@@ -43,14 +44,14 @@ const Navigation = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-body text-sm text-muted-foreground hover:text-gold transition-colors duration-300"
+                className="font-body text-sm text-muted-foreground hover:text-sage transition-colors duration-300 font-light tracking-wide"
               >
                 {link.label}
               </a>
             ))}
             <a 
               href="mailto:lapqchu@gmail.com"
-              className="px-5 py-2 bg-gold text-primary-foreground rounded-full font-body text-sm font-medium hover:bg-gold-light transition-colors duration-300"
+              className="px-5 py-2 bg-sage text-primary-foreground rounded-sm font-body text-sm font-medium hover:bg-sage-light transition-colors duration-300"
             >
               Contact
             </a>
@@ -82,7 +83,7 @@ const Navigation = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-display text-2xl text-foreground hover:text-gold transition-colors duration-300"
+                  className="font-display text-2xl text-foreground hover:text-sage transition-colors duration-300"
                 >
                   {link.label}
                 </a>
@@ -90,7 +91,7 @@ const Navigation = () => {
               <a 
                 href="mailto:lapqchu@gmail.com"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 px-6 py-3 bg-gold text-primary-foreground rounded-full font-body text-center font-medium"
+                className="mt-4 px-6 py-3 bg-sage text-primary-foreground rounded-sm font-body text-center font-medium"
               >
                 Contact Me
               </a>
