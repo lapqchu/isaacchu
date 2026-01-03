@@ -77,42 +77,7 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Adventure Photos Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid md:grid-cols-2 gap-6 mb-12"
-        >
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm group">
-            <img 
-              src={snowboardPhoto}
-              alt="Isaac snowboarding in the mountains"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-earth/80 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <p className="font-display text-xl text-foreground">Alpine Adventures</p>
-              <p className="font-body text-sm text-sand-muted font-light">Snowboarding in the Alps</p>
-            </div>
-          </div>
-          
-          <div className="relative aspect-[4/3] overflow-hidden rounded-sm group">
-            <img 
-              src={desertPhoto}
-              alt="Isaac in the Sahara Desert"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-earth/80 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <p className="font-display text-xl text-foreground">Desert Exploration</p>
-              <p className="font-body text-sm text-sand-muted font-light">Sahara Desert, Morocco</p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Interests */}
+        {/* Personal Interests with Adventure Photos */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -124,7 +89,7 @@ const Skills = () => {
             Personal Interests
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             {interests.map((interest, index) => (
               <div key={index}>
                 <div className="flex items-center gap-3 mb-4">
@@ -146,6 +111,33 @@ const Skills = () => {
                 </ul>
               </div>
             ))}
+          </div>
+
+          {/* Adventure Photos - Full display */}
+          <div className="grid md:grid-cols-2 gap-6 mt-8 pt-8 border-t border-border">
+            <div className="relative overflow-hidden rounded-sm group">
+              <img 
+                src={snowboardPhoto}
+                alt="Isaac snowboarding in the mountains"
+                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-6">
+                <p className="font-display text-xl text-foreground">Alpine Adventures</p>
+                <p className="font-body text-sm text-sand-muted font-light">Snowboarding in the Alps</p>
+              </div>
+            </div>
+            
+            <div className="relative overflow-hidden rounded-sm group">
+              <img 
+                src={desertPhoto}
+                alt="Isaac in the Sahara Desert"
+                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-6">
+                <p className="font-display text-xl text-foreground">Desert Exploration</p>
+                <p className="font-body text-sm text-sand-muted font-light">Sahara Desert, Morocco</p>
+              </div>
+            </div>
           </div>
           
           <div className="mt-8 pt-6 border-t border-border">
