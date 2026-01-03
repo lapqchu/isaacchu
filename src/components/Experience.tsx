@@ -71,7 +71,7 @@ const experiences: ExperienceItem[] = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="section-padding bg-charcoal-light">
+    <section id="experience" className="section-padding bg-background">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -80,17 +80,17 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="text-gold font-body text-sm uppercase tracking-[0.2em] mb-4">
+          <p className="text-sage font-body text-sm uppercase tracking-[0.3em] mb-4 font-light">
             Career Journey
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
             Work Experience
           </h2>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-gold via-gold/50 to-transparent" />
+          <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-sage via-sage/30 to-transparent" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -103,19 +103,19 @@ const Experience = () => {
                 className="relative pl-8 md:pl-20"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-8 top-2 w-3 h-3 -translate-x-1/2 rounded-full bg-gold shadow-[0_0_12px_hsl(43_45%_59%_/_0.5)]" />
+                <div className="absolute left-0 md:left-8 top-2 w-3 h-3 -translate-x-1/2 rounded-full bg-sage shadow-[0_0_12px_hsl(75_20%_45%_/_0.4)]" />
                 
-                <div className="card-glass rounded-lg p-6 md:p-8">
+                <div className="card-glass rounded-sm p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-2">
                     <div>
-                      <h3 className="font-display text-2xl font-semibold text-foreground">
+                      <h3 className="font-display text-2xl text-foreground">
                         {exp.company}
                       </h3>
-                      <p className="font-body text-gold">{exp.role}</p>
+                      <p className="font-body text-sage font-light">{exp.role}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-body text-sm text-muted-foreground">{exp.period}</p>
-                      <p className="font-body text-sm text-muted-foreground">{exp.location}</p>
+                      <p className="font-body text-sm text-muted-foreground font-light">{exp.period}</p>
+                      <p className="font-body text-sm text-muted-foreground font-light">{exp.location}</p>
                     </div>
                   </div>
                   
@@ -123,9 +123,9 @@ const Experience = () => {
                     {exp.highlights.map((highlight, hIndex) => (
                       <li 
                         key={hIndex}
-                        className="font-body text-sm md:text-base text-cream-muted leading-relaxed flex gap-3"
+                        className="font-body text-sm md:text-base text-sand-muted leading-relaxed flex gap-3 font-light"
                       >
-                        <span className="text-gold mt-1.5 flex-shrink-0">•</span>
+                        <span className="text-sage mt-1.5 flex-shrink-0">—</span>
                         <span>{highlight}</span>
                       </li>
                     ))}
