@@ -118,6 +118,13 @@ const Hero = () => {
             <Phone size={16} className="text-sage" />
             <span className="font-body font-light">+852 5418 1133</span>
           </a>
+          <a 
+            href="tel:+4407397288999" 
+            className="flex items-center gap-2 hover:text-sage transition-colors duration-300"
+          >
+            <Phone size={16} className="text-sage" />
+            <span className="font-body font-light">+44 07397 288999</span>
+          </a>
           <div className="flex items-center gap-2">
             <MapPin size={16} className="text-sage" />
             <span className="font-body font-light">Hong Kong / London</span>

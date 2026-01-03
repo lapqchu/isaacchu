@@ -15,10 +15,7 @@ const experiences: ExperienceItem[] = [
     location: "UK",
     period: "Aug 2024 – Present",
     highlights: [
-      "Junior trader in EM Macro Trading desk with exposure to CE3, EM Asia, MENA, Russia, and African regions",
-      "Engaged in market making and pricing with RM, Corporate, and HF clients on FX spot, forwards, NDFs and swaps",
-      "Contributed to running a systematic book with realised Sharpe Ratio of 1.7",
-      "Built macro screeners on signals, economic releases, historic correlations and curve shapes",
+      "EM Macro Trading",
     ],
   },
   {
@@ -28,7 +25,7 @@ const experiences: ExperienceItem[] = [
     period: "Jun – Aug 2024",
     highlights: [
       "Worked under EM Rates Exotics and Hybrids, shadowed across STIR, FX, Swaptions, Structuring and Private Credit desks",
-      "Backtested bid-offer spread effects on European swaptions realised volatility",
+      "Built interactive dashboards and analytics for desk positions, and automated daily admin tasks via macros and Python",
       "Built Excel pricers for FX options, IRS, and FX swaps; constructed zero and forward curves",
       "Presented weekly trade ideas to CEM desks including PLN 6y2ync1x callable bond",
     ],
@@ -39,10 +36,11 @@ const experiences: ExperienceItem[] = [
     location: "UK",
     period: "Jul – Aug 2023",
     highlights: [
+      "40USD billion macro hedge fund",
       "Designed trade validation toolkit via factor models with ML and sentiment analysis",
       "Enhanced portfolio Sharpe Ratio from 1.09 to 3.10 through model improvements",
       "Proposed DV01 neutral STIR and forex trades via quantitative and relative value methods",
-      "Researched macroeconomic trends across EM and DM markets",
+      "Published macroeconomics reports covering EM and DM markets",
     ],
   },
   {
@@ -51,6 +49,7 @@ const experiences: ExperienceItem[] = [
     location: "Hong Kong",
     period: "Aug – Sep 2022",
     highlights: [
+      "Single Family Office focused on healthcare, technology, and web3 investing",
       "Contributed to US$205 million SPAC merger of TGVC and The Flexi Group",
       "Screened and analysed 90+ ventures in engineering, biopharmaceutical, and technology sectors",
       "Assisted in raising over US$50 million through SPVs and SAFE",
