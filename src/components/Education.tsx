@@ -29,6 +29,7 @@ const education: EducationItem[] = [
     location: "USA",
     details: [
       "Cumulative GPA: 3.78/4.00",
+      "Linear Algebra and Multivariable Calculus",
     ],
   },
   {

@@ -2,61 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Isaac Chu Portfolio - Aman-Inspired Nature & Elegance Design System */
+/* Isaac Chu Portfolio - Ocean & Beach Inspired Elegance Design System */
 
 @layer base {
   :root {
-    /* Warm earth tones with nature-inspired palette */
-    --background: 30 15% 8%;
-    --foreground: 35 20% 92%;
+    /* Deep ocean tones with coastal palette */
+    --background: 210 25% 8%;
+    --foreground: 200 15% 92%;
 
-    --card: 30 12% 12%;
-    --card-foreground: 35 20% 92%;
+    --card: 210 20% 12%;
+    --card-foreground: 200 15% 92%;
 
-    --popover: 30 12% 12%;
-    --popover-foreground: 35 20% 92%;
+    --popover: 210 20% 12%;
+    --popover-foreground: 200 15% 92%;
 
-    /* Earthy sage/olive primary */
-    --primary: 75 20% 45%;
-    --primary-foreground: 30 15% 8%;
+    /* Ocean teal/aqua primary */
+    --primary: 185 35% 45%;
+    --primary-foreground: 210 25% 8%;
 
-    --secondary: 30 10% 16%;
-    --secondary-foreground: 35 20% 92%;
+    --secondary: 210 18% 16%;
+    --secondary-foreground: 200 15% 92%;
 
-    --muted: 30 8% 22%;
-    --muted-foreground: 35 15% 55%;
+    --muted: 210 15% 22%;
+    --muted-foreground: 200 12% 55%;
 
-    --accent: 75 20% 45%;
-    --accent-foreground: 30 15% 8%;
+    --accent: 185 35% 45%;
+    --accent-foreground: 210 25% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 10% 20%;
-    --input: 30 10% 20%;
-    --ring: 75 20% 45%;
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 185 35% 45%;
 
     --radius: 0.25rem;
 
-    /* Custom nature-inspired tokens */
-    --sage: 75 20% 45%;
-    --sage-light: 75 25% 58%;
-    --sage-dark: 75 18% 35%;
-    --earth: 30 15% 8%;
-    --earth-light: 30 12% 14%;
-    --stone: 35 8% 28%;
-    --sand: 35 20% 92%;
-    --sand-muted: 35 15% 70%;
-    --terracotta: 18 45% 50%;
-    --forest: 140 20% 25%;
+    /* Custom ocean-inspired tokens */
+    --sage: 185 35% 45%;
+    --sage-light: 185 40% 55%;
+    --sage-dark: 185 30% 35%;
+    --earth: 210 25% 8%;
+    --earth-light: 210 20% 14%;
+    --stone: 210 12% 28%;
+    --sand: 45 30% 90%;
+    --sand-muted: 200 12% 68%;
+    --terracotta: 195 40% 50%;
+    --forest: 190 25% 25%;
     
     /* Gradients */
-    --gradient-sage: linear-gradient(135deg, hsl(75 20% 45%), hsl(75 25% 58%));
-    --gradient-earth: linear-gradient(180deg, hsl(30 15% 8%), hsl(30 12% 14%));
-    --gradient-card: linear-gradient(145deg, hsl(30 12% 14%), hsl(30 15% 10%));
+    --gradient-sage: linear-gradient(135deg, hsl(185 35% 45%), hsl(185 40% 55%));
+    --gradient-earth: linear-gradient(180deg, hsl(210 25% 8%), hsl(210 20% 14%));
+    --gradient-card: linear-gradient(145deg, hsl(210 20% 14%), hsl(210 25% 10%));
     
     /* Shadows */
-    --shadow-sage: 0 4px 30px -8px hsl(75 20% 45% / 0.2);
+    --shadow-sage: 0 4px 30px -8px hsl(185 35% 45% / 0.2);
     --shadow-card: 0 10px 40px -15px hsl(0 0% 0% / 0.4);
     --shadow-subtle: 0 2px 20px -5px hsl(0 0% 0% / 0.25);
 
@@ -75,25 +75,25 @@
   }
 
   .dark {
-    --background: 30 15% 8%;
-    --foreground: 35 20% 92%;
-    --card: 30 12% 12%;
-    --card-foreground: 35 20% 92%;
-    --popover: 30 12% 12%;
-    --popover-foreground: 35 20% 92%;
-    --primary: 75 20% 45%;
-    --primary-foreground: 30 15% 8%;
-    --secondary: 30 10% 16%;
-    --secondary-foreground: 35 20% 92%;
-    --muted: 30 8% 22%;
-    --muted-foreground: 35 15% 55%;
-    --accent: 75 20% 45%;
-    --accent-foreground: 30 15% 8%;
+    --background: 210 25% 8%;
+    --foreground: 200 15% 92%;
+    --card: 210 20% 12%;
+    --card-foreground: 200 15% 92%;
+    --popover: 210 20% 12%;
+    --popover-foreground: 200 15% 92%;
+    --primary: 185 35% 45%;
+    --primary-foreground: 210 25% 8%;
+    --secondary: 210 18% 16%;
+    --secondary-foreground: 200 15% 92%;
+    --muted: 210 15% 22%;
+    --muted-foreground: 200 12% 55%;
+    --accent: 185 35% 45%;
+    --accent-foreground: 210 25% 8%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 30 10% 20%;
-    --input: 30 10% 20%;
-    --ring: 75 20% 45%;
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 185 35% 45%;
   }
 }
 
@@ -145,9 +145,9 @@
     @apply relative overflow-hidden;
     background: linear-gradient(
       135deg,
-      hsl(30 12% 12%) 0%,
-      hsl(30 15% 16%) 50%,
-      hsl(30 12% 12%) 100%
+      hsl(210 20% 12%) 0%,
+      hsl(210 25% 16%) 50%,
+      hsl(210 20% 12%) 100%
     );
   }
 
@@ -158,8 +158,8 @@
       0deg,
       transparent,
       transparent 2px,
-      hsl(30 10% 20% / 0.1) 2px,
-      hsl(30 10% 20% / 0.1) 4px
+      hsl(210 15% 20% / 0.1) 2px,
+      hsl(210 15% 20% / 0.1) 4px
     );
   }
 }

@@ -5,14 +5,14 @@ const About = () => {
   return (
     <section id="about" className="section-padding bg-earth-light">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Professional Photo */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative lg:sticky lg:top-24"
           >
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
               <img 
@@ -63,15 +63,19 @@ const About = () => {
               <div className="flex flex-wrap gap-8">
                 <div>
                   <p className="font-display text-3xl text-sage mb-1">5+</p>
-                  <p className="font-body text-sm text-muted-foreground font-light">Finance Internships</p>
+                  <p className="font-body text-sm text-muted-foreground font-light">Experiences Across Industries</p>
                 </div>
                 <div>
                   <p className="font-display text-3xl text-sage mb-1">5</p>
                   <p className="font-body text-sm text-muted-foreground font-light">Languages Spoken</p>
                 </div>
                 <div>
-                  <p className="font-display text-3xl text-sage mb-1">1.7</p>
-                  <p className="font-body text-sm text-muted-foreground font-light">Sharpe Ratio Achieved</p>
+                  <p className="font-display text-3xl text-sage mb-1">22</p>
+                  <p className="font-body text-sm text-muted-foreground font-light">Countries Visited</p>
+                </div>
+                <div>
+                  <p className="font-display text-3xl text-sage mb-1">2</p>
+                  <p className="font-body text-sm text-muted-foreground font-light">Instruments Played</p>
                 </div>
               </div>
             </motion.div>

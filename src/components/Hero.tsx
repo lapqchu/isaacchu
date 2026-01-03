@@ -1,9 +1,43 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, MapPin, Play } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const roles = ["Trader", "Engineer", "Body Builder", "Blogger", "Foodie"];
 
 const Hero = () => {
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[currentRoleIndex];
+    const typeSpeed = isDeleting ? 50 : 100;
+    const pauseTime = 2000;
+
+    if (!isDeleting && displayText === currentRole) {
+      const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && displayText === "") {
+      setIsDeleting(false);
+      setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setDisplayText(currentRole.slice(0, displayText.length - 1));
+      } else {
+        setDisplayText(currentRole.slice(0, displayText.length + 1));
+      }
+    }, typeSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentRoleIndex]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden pb-32">
       {/* Video placeholder background - ready for stock video */}
       <div className="absolute inset-0 video-placeholder">
         {/* Replace this div with a video element when ready:
@@ -38,8 +72,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-sage font-body text-sm md:text-base uppercase tracking-[0.4em] mb-6 font-light">
-            Finance Professional
+          <p className="text-sage font-body text-sm md:text-base uppercase tracking-[0.4em] mb-6 font-light h-6">
+            <span>{displayText}</span>
+            <span className="animate-pulse">|</span>
           </p>
         </motion.div>
         
@@ -88,23 +123,23 @@ const Hero = () => {
             <span className="font-body font-light">Hong Kong / London</span>
           </div>
         </motion.div>
-        
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-6 h-10 rounded-full border border-sage/40 flex justify-center pt-2"
-          >
-            <motion.div className="w-1 h-2 bg-sage rounded-full" />
-          </motion.div>
-        </motion.div>
       </div>
+      
+      {/* Scroll indicator - positioned with more space */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-6 h-10 rounded-full border border-sage/40 flex justify-center pt-2"
+        >
+          <motion.div className="w-1 h-2 bg-sage rounded-full" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
