@@ -38,7 +38,7 @@ const Footer = () => {
                 Get in Touch
               </a>
               <a 
-                href="tel:+85254181133"
+                href="tel:+4407397288999"
                 className="flex items-center gap-2 px-8 py-4 border border-foreground/80 text-foreground rounded-sm font-body text-sm font-medium hover:bg-foreground/10 transition-colors duration-300 backdrop-blur-sm"
               >
                 <Phone size={16} />

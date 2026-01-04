@@ -1,13 +1,74 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Play, Linkedin } from "lucide-react";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import backgroundVideo from "@/assets/70796-538877060_medium.mp4";
 
 const roles = ["Trader", "Engineer", "Body Builder", "Blogger", "Foodie"];
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Ensure autoplay-friendly defaults
+    video.muted = true;
+    video.defaultMuted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.controls = false;
+
+    const tryPlay = () => {
+      video.muted = true;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise.catch(() => {
+          video.muted = true;
+          video.play().catch(() => {
+            /* ignore if browser blocks autoplay */
+          });
+        });
+      }
+    };
+
+    const ensurePlay = () => {
+      if (video.paused) {
+        tryPlay();
+      }
+    };
+
+    const onCanPlay = () => ensurePlay();
+
+    tryPlay();
+
+    const onVisibilityChange = () => {
+      if (!document.hidden) ensurePlay();
+    };
+
+    const userKickstart = () => {
+      ensurePlay();
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    video.addEventListener("canplay", onCanPlay);
+    window.addEventListener("pointerdown", userKickstart, { once: true });
+    window.addEventListener("touchstart", userKickstart, { once: true });
+    window.addEventListener("keydown", userKickstart, { once: true });
+    window.addEventListener("scroll", userKickstart, { once: true });
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      video.removeEventListener("canplay", onCanPlay);
+      window.removeEventListener("pointerdown", userKickstart);
+      window.removeEventListener("touchstart", userKickstart);
+      window.removeEventListener("keydown", userKickstart);
+      window.removeEventListener("scroll", userKickstart);
+    };
+  }, []);
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
@@ -38,25 +99,21 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden pb-32">
-      {/* Video placeholder background - ready for stock video */}
+      {/* Background video */}
       <div className="absolute inset-0 video-placeholder">
-        {/* Replace this div with a video element when ready:
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="your-video.mp4" type="video/mp4" />
-            </video>
-        */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-muted-foreground/50">
-            <Play size={48} className="mx-auto mb-4 opacity-30" />
-            <p className="font-body text-sm tracking-wider uppercase opacity-50">Video Background Placeholder</p>
-          </div>
-        </div>
+        <video
+          ref={videoRef}
+          autoPlay
+          defaultMuted
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
       </div>
       
       {/* Dark overlay for text readability */}
