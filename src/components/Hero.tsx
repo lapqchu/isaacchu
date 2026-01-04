@@ -15,24 +15,25 @@ const Hero = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Ensure autoplay-friendly defaults
+    // Set attributes programmatically for Safari compatibility
     video.muted = true;
-    video.defaultMuted = true;
     video.autoplay = true;
     video.loop = true;
     video.playsInline = true;
     video.controls = false;
+    // Safari-specific attributes
+    video.setAttribute('webkit-playsinline', 'true');
+    video.setAttribute('playsinline', 'true');
+    video.setAttribute('muted', 'true');
 
-    const tryPlay = () => {
-      video.muted = true;
-      const playPromise = video.play();
-      if (playPromise && typeof playPromise.then === "function") {
-        playPromise.catch(() => {
-          video.muted = true;
-          video.play().catch(() => {
-            /* ignore if browser blocks autoplay */
-          });
-        });
+    const tryPlay = async () => {
+      try {
+        video.muted = true;
+        if (video.paused) {
+          await video.play();
+        }
+      } catch {
+        // Silent fail - will retry on user interaction
       }
     };
 
@@ -42,9 +43,19 @@ const Hero = () => {
       }
     };
 
+    // Multiple event listeners to catch Safari's delayed readiness
+    const onLoadedMetadata = () => ensurePlay();
+    const onLoadedData = () => ensurePlay();
     const onCanPlay = () => ensurePlay();
+    const onCanPlayThrough = () => ensurePlay();
 
+    // Initial play attempt
     tryPlay();
+
+    // Retry after short delays for Safari
+    const retryTimeout = setTimeout(() => ensurePlay(), 100);
+    const retryTimeout2 = setTimeout(() => ensurePlay(), 500);
+    const retryTimeout3 = setTimeout(() => ensurePlay(), 1000);
 
     const onVisibilityChange = () => {
       if (!document.hidden) ensurePlay();
@@ -55,14 +66,24 @@ const Hero = () => {
     };
 
     document.addEventListener("visibilitychange", onVisibilityChange);
+    video.addEventListener("loadedmetadata", onLoadedMetadata);
+    video.addEventListener("loadeddata", onLoadedData);
     video.addEventListener("canplay", onCanPlay);
+    video.addEventListener("canplaythrough", onCanPlayThrough);
     window.addEventListener("pointerdown", userKickstart, { once: true });
     window.addEventListener("touchstart", userKickstart, { once: true });
     window.addEventListener("keydown", userKickstart, { once: true });
     window.addEventListener("scroll", userKickstart, { once: true });
+    
     return () => {
+      clearTimeout(retryTimeout);
+      clearTimeout(retryTimeout2);
+      clearTimeout(retryTimeout3);
       document.removeEventListener("visibilitychange", onVisibilityChange);
+      video.removeEventListener("loadedmetadata", onLoadedMetadata);
+      video.removeEventListener("loadeddata", onLoadedData);
       video.removeEventListener("canplay", onCanPlay);
+      video.removeEventListener("canplaythrough", onCanPlayThrough);
       window.removeEventListener("pointerdown", userKickstart);
       window.removeEventListener("touchstart", userKickstart);
       window.removeEventListener("keydown", userKickstart);
