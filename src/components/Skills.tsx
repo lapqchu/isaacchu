@@ -115,11 +115,11 @@ const Skills = () => {
 
           {/* Adventure Photos - Full display */}
           <div className="grid md:grid-cols-2 gap-6 mt-8 pt-8 border-t border-border">
-            <div className="relative overflow-hidden rounded-sm group">
-              <img 
+            <div className="relative overflow-hidden rounded-sm group aspect-[4/3]">
+              <img
                 src={snowboardPhoto}
                 alt="Isaac snowboarding in the mountains"
-                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-6">
                 <p className="font-display text-xl text-foreground">Alpine Adventures</p>
@@ -127,11 +127,11 @@ const Skills = () => {
               </div>
             </div>
             
-            <div className="relative overflow-hidden rounded-sm group">
-              <img 
+            <div className="relative overflow-hidden rounded-sm group aspect-[4/3]">
+              <img
                 src={desertPhoto}
                 alt="Isaac in the Sahara Desert"
-                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-6">
                 <p className="font-display text-xl text-foreground">Desert Exploration</p>
