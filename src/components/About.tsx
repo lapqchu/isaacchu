@@ -43,7 +43,7 @@ const About = () => {
             
             <div className="space-y-6 font-body text-sand-muted leading-relaxed font-light">
               <p>
-                Born and raised in Hong Kong with formative years spent in the UK, I've developed a unique perspective that bridges Eastern and Western financial markets. My journey into finance began with a fascination for how global macroeconomic forces shape currency movements and interest rate dynamics.
+                Born and raised in Hong Kong with formative years spent in the UK, I’ve developed a perspective shaped by both Eastern and Western cultures. That global upbringing sparked a lasting curiosity about the world of financial markets and investing—alongside a parallel interest in science and technology and how innovation shapes the way we live and work.
               </p>
               <p>
                 After graduating from Imperial College London with a Master's in Mechanical Engineering, I pivoted to pursue my passion in financial markets. This unconventional path gave me a quantitative foundation that I now apply daily in my role as a Graduate Analyst at Barclays' EM Macro Trading desk.
