@@ -24,7 +24,7 @@ const About = () => {
               <div className="absolute inset-4 border border-sage/30 rounded-sm pointer-events-none" />
             </div>
             {/* Decorative element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border border-sage/20 rounded-sm -z-10" />
+            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-24 h-24 border border-sage/20 rounded-sm -z-10" />
           </motion.div>
 
           {/* Bio Content */}
