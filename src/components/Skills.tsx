@@ -16,7 +16,7 @@ const skillCategories = [
 
 const interests = [
   { icon: Music, items: ["ABRSM Grade 8 Piano (Distinction)", "RockSchool Grade 5 Electric Guitar (Merit)"] },
-  { icon: Mountain, items: ["Wakesurfing", "Snowboarding", "Mountain-Biking", "10-Pin Bowling"] },
+  { icon: Mountain, items: ["Wakesurfing", "Snowboarding", "Mountain-Biking", "10-Pin Bowling", "Golf"] },
 ];
 
 const Skills = () => {

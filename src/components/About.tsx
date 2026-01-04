@@ -109,10 +109,6 @@ const About = () => {
                   <p className="font-display text-3xl text-sage mb-1">22</p>
                   <p className="font-body text-sm text-muted-foreground font-light">Countries Visited</p>
                 </div>
-                <div>
-                  <p className="font-display text-3xl text-sage mb-1">2</p>
-                  <p className="font-body text-sm text-muted-foreground font-light">Instruments Played</p>
-                </div>
               </div>
             </motion.div>
           </motion.div>
