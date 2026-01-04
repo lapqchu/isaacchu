@@ -79,13 +79,13 @@ const About = () => {
             
             <div className="space-y-6 font-body text-sand-muted leading-relaxed font-light">
               <p>
-                Born and raised in Hong Kong with formative years spent in the UK, I've developed a perspective shaped by both Eastern and Western cultures. That global upbringing sparked a lasting curiosity about the world of financial markets and investing—alongside a parallel interest in science and technology and how innovation shapes the way we live and work.
+                Born and raised in Hong Kong, I moved to the UK for high school and later studied Mechanical Engineering at Imperial College London. I’m now a Graduate Analyst specialising in EM Macro trading at Barclays.
               </p>
               <p>
-                After graduating from Imperial College London with a Master's in Mechanical Engineering, I pivoted to pursue my passion in financial markets. This unconventional path gave me a quantitative foundation that I now apply daily in my role as a Graduate Analyst at Barclays' EM Macro Trading desk.
+                During university, I focused on robotics design and the clean energy transition, which gave me a strong technical and analytical foundation. Alongside this, I gained exposure across hedge funds, family offices, consulting, quantitative trading, and wealth management. Having worked across both technical and commercial settings—and across East and the West - I enjoy applying my skill set wherever I can add value, whether that’s analysing a problem, managing risk, or building better ways of working.
               </p>
               <p>
-                Beyond the trading floor, I find balance through music—I hold distinctions in both piano and guitar—and outdoor pursuits like snowboarding and wakesurfing. These interests reflect my belief that excellence in any field requires both discipline and the ability to embrace the present moment.
+                Outside of work, I hold a distinction in piano and enjoy snowboarding, wakesurfing, golf, 10-pin bowling, and bodybuilding. I speak fluent English, Mandarin, Cantonese and conversational Japanese. Please don't hesitate to send me a message if you'd like to connect - I'd be thrilled to hear from you!
               </p>
             </div>
 
