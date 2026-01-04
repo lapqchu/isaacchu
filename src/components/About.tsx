@@ -18,6 +18,8 @@ const About = () => {
           >
             {/* Professional Headshot */}
             <div className="relative max-w-[240px] md:max-w-[280px] mx-auto lg:mx-0">
+              {/* Decorative border - offset behind */}
+              <div className="absolute top-3 left-3 w-full h-full border border-sage/40 rounded-sm" />
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
                 <img 
                   src={professionalPhoto}
@@ -25,8 +27,6 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Decorative border */}
-              <div className="absolute -bottom-3 -right-3 w-full h-full border border-sage/30 rounded-sm -z-10" />
             </div>
 
             {/* Adventure Photos */}
