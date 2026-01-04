@@ -1,30 +1,66 @@
 import { motion } from "framer-motion";
 import professionalPhoto from "@/assets/professional.jpg";
+import snowboardPhoto from "@/assets/snowboard.jpg";
+import desertPhoto from "@/assets/desert.jpg";
 
 const About = () => {
   return (
     <section id="about" className="section-padding bg-earth-light">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Professional Photo */}
+          {/* Professional Photo and Adventure Photos */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="relative lg:sticky lg:top-24"
+            className="space-y-8"
           >
-            <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[240px] md:max-w-[280px] mx-auto">
-              <img 
-                src={professionalPhoto}
-                alt="Isaac Chu - Professional Portrait"
-                className="w-full h-full object-cover"
-              />
-              {/* Elegant border overlay */}
-              <div className="absolute inset-4 border border-sage/30 rounded-sm pointer-events-none" />
+            {/* Professional Headshot */}
+            <div className="relative max-w-[240px] md:max-w-[280px] mx-auto lg:mx-0">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
+                <img 
+                  src={professionalPhoto}
+                  alt="Isaac Chu - Professional Portrait"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative border */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full border border-sage/30 rounded-sm -z-10" />
             </div>
-            {/* Decorative element */}
-            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-24 h-24 border border-sage/20 rounded-sm -z-10" />
+
+            {/* Adventure Photos */}
+            <div className="space-y-6 pt-4">
+              <p className="text-sage font-body text-xs uppercase tracking-[0.2em] font-light">
+                Life Beyond Work
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative overflow-hidden rounded-sm group">
+                  <img 
+                    src={snowboardPhoto}
+                    alt="Isaac snowboarding in the mountains"
+                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-3">
+                    <p className="font-display text-sm text-foreground">Alpine Adventures</p>
+                    <p className="font-body text-xs text-sand-muted font-light">Snowboarding in the Alps</p>
+                  </div>
+                </div>
+                
+                <div className="relative overflow-hidden rounded-sm group">
+                  <img 
+                    src={desertPhoto}
+                    alt="Isaac in the Sahara Desert"
+                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-3">
+                    <p className="font-display text-sm text-foreground">Desert Exploration</p>
+                    <p className="font-body text-xs text-sand-muted font-light">Sahara Desert, Morocco</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           {/* Bio Content */}
@@ -43,7 +79,7 @@ const About = () => {
             
             <div className="space-y-6 font-body text-sand-muted leading-relaxed font-light">
               <p>
-                Born and raised in Hong Kong with formative years spent in the UK, I’ve developed a perspective shaped by both Eastern and Western cultures. That global upbringing sparked a lasting curiosity about the world of financial markets and investing—alongside a parallel interest in science and technology and how innovation shapes the way we live and work.
+                Born and raised in Hong Kong with formative years spent in the UK, I've developed a perspective shaped by both Eastern and Western cultures. That global upbringing sparked a lasting curiosity about the world of financial markets and investing—alongside a parallel interest in science and technology and how innovation shapes the way we live and work.
               </p>
               <p>
                 After graduating from Imperial College London with a Master's in Mechanical Engineering, I pivoted to pursue my passion in financial markets. This unconventional path gave me a quantitative foundation that I now apply daily in my role as a Graduate Analyst at Barclays' EM Macro Trading desk.

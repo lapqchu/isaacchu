@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Code, Languages, Music, Mountain } from "lucide-react";
-import snowboardPhoto from "@/assets/snowboard.jpg";
-import desertPhoto from "@/assets/desert.jpg";
 
 const skillCategories = [
   {
@@ -77,7 +75,7 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Personal Interests with Adventure Photos */}
+        {/* Personal Interests */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +87,7 @@ const Skills = () => {
             Personal Interests
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {interests.map((interest, index) => (
               <div key={index}>
                 <div className="flex items-center gap-3 mb-4">
@@ -111,33 +109,6 @@ const Skills = () => {
                 </ul>
               </div>
             ))}
-          </div>
-
-          {/* Adventure Photos - Full display */}
-          <div className="grid md:grid-cols-2 gap-6 mt-8 pt-8 border-t border-border">
-            <div className="relative overflow-hidden rounded-sm group">
-              <img 
-                src={snowboardPhoto}
-                alt="Isaac snowboarding in the mountains"
-                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-6">
-                <p className="font-display text-xl text-foreground">Alpine Adventures</p>
-                <p className="font-body text-sm text-sand-muted font-light">Snowboarding in the Alps</p>
-              </div>
-            </div>
-            
-            <div className="relative overflow-hidden rounded-sm group">
-              <img 
-                src={desertPhoto}
-                alt="Isaac in the Sahara Desert"
-                className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-earth/90 to-transparent p-6">
-                <p className="font-display text-xl text-foreground">Desert Exploration</p>
-                <p className="font-body text-sm text-sand-muted font-light">Sahara Desert, Morocco</p>
-              </div>
-            </div>
           </div>
           
           <div className="mt-8 pt-6 border-t border-border">
