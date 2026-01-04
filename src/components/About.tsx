@@ -14,7 +14,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="relative lg:sticky lg:top-24"
           >
-            <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-sm max-w-[200px] md:max-w-[240px] mx-auto">
               <img 
                 src={professionalPhoto}
                 alt="Isaac Chu - Professional Portrait"
